@@ -1,0 +1,16 @@
+CC=g++
+CFLAGS=-c -Wall
+
+all: program
+
+program: main.o arrayinfuncprikol.o
+$(CC) main.o arrayinfuncprikol.o -o program
+
+main.o: main.cpp arrhead.h
+$(CC) $(CFLAGS) main.cpp
+
+arrayinfuncprikol.o: arrayinfuncprikol.cpp arrhead.h
+$(CC) $(CFLAGS) arrayinfuncprikol.cpp
+
+clean:
+rm -rf *.o program
