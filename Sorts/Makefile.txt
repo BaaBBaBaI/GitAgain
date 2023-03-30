@@ -1,0 +1,16 @@
+CC=g++
+CFLAGS=-c -Wall
+
+all: sorts
+
+sorts: main.o sorts.o
+$(CC) main.o sorts.o -o sorts
+
+main.o: main.cpp sorts.h
+$(CC) $(CFLAGS) main.cpp
+
+sorts.o: sorts.cpp sorts.h
+$(CC) $(CFLAGS) sorts.cpp
+
+clean:
+rm -rf *o sorts
