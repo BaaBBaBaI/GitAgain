@@ -1,0 +1,13 @@
+all: other
+
+other: main.o realize.o
+    g++ main.o realize.o -o other
+
+main.o: main.cpp
+    g++ -c main.cpp
+
+realize.o: realize.cpp
+    g++ -c realize.cpp
+
+clean:
+	rm -rf *.o other
